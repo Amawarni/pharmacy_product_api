@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8070;
 
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(express.json());
+
 
 // connect to the database 
 const URL = process.env.MONGODB_URL;
@@ -31,8 +31,8 @@ app.listen(PORT, () => {
 });
 
 
-/*app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello World!!!');
-});*/
+});
 
 
