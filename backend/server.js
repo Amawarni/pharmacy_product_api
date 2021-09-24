@@ -26,13 +26,15 @@ connection.once("open", () => {
     console.log("Mongodb connection is successful!");
 });
 
+const productRouter = require("./routes/products.js");
+
+app.use("/product", productRouter );
+
 app.listen(PORT, () => {
     console.log( `Listening on port number : ${PORT} ...`);
 });
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!!!');
-});
+
 
 

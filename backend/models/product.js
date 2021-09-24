@@ -9,7 +9,7 @@ const productSchema =  new Schema({
         required : true
     },
     Registration_number : {
-        type : SVGAnimatedInteger,
+        type : Number,
         required : true
     },
     Product_name: {
