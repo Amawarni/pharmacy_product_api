@@ -4,8 +4,12 @@ const Schema = mongoose.Schema;
 
 const productSchema =  new Schema({
 
-    Registration_number : {
+    Registeration_number : {
         type : Number,
+        required : true
+    },
+    Item_code : {
+        type : String,
         required : true
     },
     Product_name: {
@@ -24,12 +28,12 @@ const productSchema =  new Schema({
         type : String,
         required : true
     },
-    Quality_status :{
+    VEN_status :{
         type : String,
         required : true
     },
-    BatchNo :{
-        type : Number,
+    Item_category :{
+        type : String,
         required : true
     }
 
