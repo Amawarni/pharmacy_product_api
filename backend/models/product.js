@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const productSchema =  new Schema({
 
-    ID : {
-        type : String,
-        required : true
-    },
     Registration_number : {
         type : Number,
         required : true
@@ -30,6 +26,10 @@ const productSchema =  new Schema({
     },
     Quality_status :{
         type : String,
+        required : true
+    },
+    BatchNo :{
+        type : Number,
         required : true
     }
 
