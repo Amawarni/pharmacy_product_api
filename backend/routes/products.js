@@ -55,6 +55,65 @@ router.route("/get/:registrationNo").get(async (req , res ) => {
 });
 
 
+router.route("/update/:id").put(async(req, res) =>{
+
+    let productId = req.params.id;
+    const {Registeration_number,Item_code,Product_name,Product_description,Company_name,Company_Adress,VEN_status,Item_category }  = req.body;
+
+    const updateProduct =  {
+        Registeration_number,
+        Item_code,
+        Product_name,
+        Product_description,
+        Company_name,
+        Company_Adress,
+        VEN_status,
+        Item_category
+    }
+
+  await Product.findByIdAndUpdate(productId, updateProduct)
+    .then(() => {
+        res.status(200).send({Status : "Product Updated" })
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).send({Status : " Error with updating data " , error : err.message});
+    })
+    
+
+    
+});
+
+
+
+router.route("/delete/:id").delete(async (req, res) => {
+    let productId = req.params.id;
+
+    await Product.findByIdAndDelete(productId)
+    .then(() => {
+        res.status(200).send({Status : "Product deleted"});
+    }). catch((err) => {
+        console.log(err.message);
+        res.status(500).send({Status : "Error with delete Product", error : err.message});
+    })
+
+
+
+
+});
+
+router.route("/get/:id").get(async(req, res) => {
+
+    let productId = req.params.id;
+
+
+   const product =  await  Product.findById(productId).then(() => {
+        res.status(200).send({Status : "Product fetched", data : product})
+    }).catch(() => {
+        console.log(err.message);
+        res.status(500).send({Status : "Error with  get Product"});
+    })
+});
+
    
    router.route("/").get((req, res) => {
 
