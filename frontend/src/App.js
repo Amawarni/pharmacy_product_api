@@ -8,7 +8,13 @@ import AllProducts from './component/AllProducts';
 function App() {
   return (
     <Router>
-      <div>
+      <div style={{ backgroundImage: "url(/img/in2.jpg)" , 
+         flex: 1,
+    width: '100vw',
+    height: '110vh',
+    backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'}}>
+      
           <Header/>
            
             <Route path="/add" exact component = {AddProduct} />
