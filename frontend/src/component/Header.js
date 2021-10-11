@@ -1,4 +1,7 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+import './images/index.jpg';
+
 
 function Header() {
 
@@ -13,10 +16,10 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                   <Link to="/" className= "nav-link">Home</Link>
                 </li>
                  <li className="nav-item">
-                    <a className="nav-link" href="#">Add Product</a>
+                    <Link to="/add" className="nav-link">Add Product</Link>
                  </li>
                  <li className="nav-item">
                      <a className="nav-link" href="#">Payment</a>

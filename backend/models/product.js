@@ -26,7 +26,7 @@ const productSchema =  new Schema({
     },
     Company_Adress : {
         type : String,
-        required : true
+        
     },
     VEN_status :{
         type : String,
