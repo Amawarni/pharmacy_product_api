@@ -42,11 +42,11 @@ router.route("/get/:registrationNo").get(async (req , res ) => {
     const validProduct = await Product.findOne({Registeration_number : productRegNo}).then((product) => {
         if(product == null)
         {
-            res.status(404).send({Status: "Registration number is not found, invalid product!"});
+            res.status(404).send({Status: "error" });
         }
         else
         {
-            res.status(200).send({product});
+            res.status(200).send({Status: "success", products: product });
         }
         }).catch((err) => {
             res.status(500).send({error: err.message});
@@ -115,9 +115,22 @@ router.route("/get/:id").get(async(req, res) => {
 });
 
    
-   router.route("/").get((req, res) => {
+   router.route("/").get(async(req, res) => {
 
-        res.send('Hello World!!!');
+    const validProduct = await Product.find().then((product) => {
+        if(product == null)
+        {
+            res.status(404).send({Status: "error" });
+        }
+        else
+        {
+            res.status(200).send({Status: "success", products: product });
+        }
+        }).catch((err) => {
+            res.status(500).send({error: err.message});
+    });
+  
+   
     });
 
 
