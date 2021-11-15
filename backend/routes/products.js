@@ -115,7 +115,7 @@ router.route("/get/:id").get(async(req, res) => {
 });
 
    
-   router.route("/").get(async(req, res) => {
+   router.route("/get").get(async(req, res) => {
 
     const validProduct = await Product.find().then((product) => {
         if(product == null)
@@ -133,7 +133,13 @@ router.route("/get/:id").get(async(req, res) => {
    
     });
 
-
+ router.route("/").get((req,res) => {
+     Product.find().then((products)=>{
+         res.json(products)
+     }).catch((err)=>{
+         console.log(err)
+     })
+ })
 
 
 

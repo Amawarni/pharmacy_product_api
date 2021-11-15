@@ -8,7 +8,7 @@ import AllProducts from './component/AllProducts';
 function App() {
   return (
     <Router>
-      <div style={{ backgroundImage: "url(/img/in2.jpg)" , 
+      <div style={{ backgroundImage: "url(/img/p1.jpg)" , 
          flex: 1,
     width: '100vw',
     height: '110vh',

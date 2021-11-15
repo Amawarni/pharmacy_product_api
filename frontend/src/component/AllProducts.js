@@ -10,7 +10,7 @@ export default function AllProducts() {
     useEffect(() => {
 
         function getProducts() {
-            axios.get("http://localhost:8070/product/").then((res) => {
+            axios.get("http://localhost:8071/product/").then((res) => {
                 setProducts(res.data);
             }).catch((err) => {
                 alert(err.message);
@@ -29,7 +29,8 @@ export default function AllProducts() {
 
         <div className= "container">
             <h1>All Products</h1>
-            
+            <a href ='#' className= 'btn btn-info'> Edit</a>
+            <a href ='#' className= 'btn btn-danger ml-3'> Delete</a>
         </div>
 
 
