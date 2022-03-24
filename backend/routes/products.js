@@ -101,14 +101,14 @@ router.route("/delete/:id").delete(async (req, res) => {
 
 });
 
-router.route("/get/:id").get(async(req, res) => {
+router.route("/getproduct/:id").get(async(req, res) => {
 
     let productId = req.params.id;
 
 
-   const product =  await  Product.findById(productId).then(() => {
+await  Product.findById(productId).then(product => {
         res.status(200).send({Status : "Product fetched", data : product})
-    }).catch(() => {
+    }).catch(err => {
         console.log(err.message);
         res.status(500).send({Status : "Error with  get Product"});
     })
